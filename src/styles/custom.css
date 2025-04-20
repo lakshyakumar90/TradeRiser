@@ -1,0 +1,223 @@
+/* Enhanced Dark and Light Mode Styles */
+
+/* Light Mode Enhancements */
+:root:not(.dark) {
+  /* Improved shadows for light mode */
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+  --card-hover-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* Light mode specific gradients */
+  --gradient-primary: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
+  --gradient-secondary: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+
+  /* Light mode specific colors */
+  --highlight-color: rgba(59, 130, 246, 0.1);
+  --hover-color: rgba(243, 244, 246, 0.8);
+  --active-color: rgba(229, 231, 235, 0.8);
+
+  /* Light mode specific text */
+  --text-shadow: none;
+
+  /* Light mode specific borders */
+  --border-subtle: rgba(0, 0, 0, 0.05);
+
+  /* Light mode specific backgrounds */
+  --bg-glass: rgba(255, 255, 255, 0.8);
+  --bg-glass-blur: blur(8px);
+
+  /* Light mode specific accents */
+  --accent-glow: none;
+}
+
+/* Dark Mode Enhancements */
+.dark {
+  /* Improved shadows for dark mode */
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --card-hover-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), 0 10px 15px rgba(0, 0, 0, 0.3);
+
+  /* Dark mode specific gradients */
+  --gradient-primary: linear-gradient(135deg, #030712 0%, #111827 100%);
+  --gradient-secondary: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+
+  /* Dark mode specific colors */
+  --highlight-color: rgba(96, 165, 250, 0.3);
+  --hover-color: rgba(17, 24, 39, 0.8);
+  --active-color: rgba(31, 41, 55, 0.8);
+
+  /* Dark mode specific text */
+  --text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+
+  /* Dark mode specific borders */
+  --border-subtle: rgba(255, 255, 255, 0.07);
+
+  /* Dark mode specific backgrounds */
+  --bg-glass: rgba(15, 23, 42, 0.8);
+  --bg-glass-blur: blur(8px);
+
+  /* Dark mode specific accents */
+  --accent-glow: 0 0 10px rgba(96, 165, 250, 0.4);
+}
+
+/* Enhanced Card Styles */
+.enhanced-card {
+  box-shadow: var(--card-shadow);
+  transition: all 0.2s ease-in-out;
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: var(--bg-glass-blur);
+  background-color: var(--bg-glass);
+}
+
+.enhanced-card:hover {
+  box-shadow: var(--card-hover-shadow);
+  transform: translateY(-2px);
+}
+
+/* Enhanced Button Styles */
+.enhanced-button {
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.enhanced-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.4);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.enhanced-button:active::after {
+  opacity: 0.2;
+  transform: scale(50, 50) translate(-50%, -50%);
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.enhanced-button.primary {
+  background: var(--gradient-primary);
+  box-shadow: var(--accent-glow);
+}
+
+.enhanced-button.secondary {
+  background: var(--gradient-secondary);
+}
+
+/* Enhanced Text Styles */
+.enhanced-text {
+  text-shadow: var(--text-shadow);
+}
+
+.enhanced-text.heading {
+  letter-spacing: -0.025em;
+}
+
+.enhanced-text.body {
+  letter-spacing: 0.025em;
+}
+
+/* Enhanced Input Styles */
+.enhanced-input {
+  transition: all 0.2s ease;
+  background-color: var(--bg-glass);
+  backdrop-filter: var(--bg-glass-blur);
+  border: 1px solid var(--border-subtle);
+}
+
+.enhanced-input:focus {
+  box-shadow: 0 0 0 3px var(--highlight-color);
+}
+
+/* Enhanced Table Styles */
+.enhanced-table th {
+  background: var(--gradient-secondary);
+  text-shadow: var(--text-shadow);
+}
+
+.enhanced-table tr:hover td {
+  background-color: var(--hover-color);
+}
+
+/* Enhanced Navigation Styles */
+.enhanced-nav-item {
+  transition: all 0.2s ease;
+}
+
+.enhanced-nav-item:hover {
+  background-color: var(--hover-color);
+}
+
+.enhanced-nav-item.active {
+  background-color: var(--highlight-color);
+  box-shadow: var(--accent-glow);
+}
+
+/* Enhanced Scrollbar */
+.enhanced-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.enhanced-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.enhanced-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--border-subtle);
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.enhanced-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--hover-color);
+}
+
+/* Enhanced Focus Styles */
+.enhanced-focus:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--highlight-color);
+}
+
+/* Enhanced Transitions */
+.enhanced-transition {
+  transition: all 0.2s ease;
+}
+
+/* Enhanced Animations */
+@keyframes enhanced-pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--highlight-color);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+.enhanced-pulse {
+  animation: enhanced-pulse 2s infinite;
+}
+
+/* Enhanced Glassmorphism */
+.enhanced-glass {
+  background: var(--bg-glass);
+  backdrop-filter: var(--bg-glass-blur);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Enhanced Gradients */
+.enhanced-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.enhanced-gradient-secondary {
+  background: var(--gradient-secondary);
+}
